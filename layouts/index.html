@@ -32,7 +32,7 @@
 	<div>
 
 		<!-- orders content according to the "publishdate" field in front matter -->
-		{{ range first (.Site.Params.PostLimit | default 4) (where .Site.RegularPages.ByPublishDate "Section" "posts") }}
+		{{ range last (.Site.Params.PostLimit | default 4) (where .Site.RegularPages.ByPublishDate "Section" "posts") }}
 		<div>
 			<a href="{{ .Permalink }}">{{ .Title }}</a><br />
 			<time>{{ .Date.Format "January 2, 2006" }}</time>
