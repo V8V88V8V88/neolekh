@@ -4,7 +4,9 @@
 <html>
 {{ partial "page_header.html" . }}
 <h1>{{ .Title }}</h1>
-<p class="post-meta"><time itemprop="datePublished">{{ .Date.Format "January 2, 2006" }}</time>
+{{ if isset .Params "date" }}
+	<p class="post-meta"><time itemprop="datePublished">{{ .Date.Format "January 2, 2006" }}</time>
+{{ end }}
 </p>
 {{ .Content }}
 
